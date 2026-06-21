@@ -41,20 +41,6 @@ export default function Hero({ onScrollDown }: HeroProps) {
       {/* Main Container - Left-aligned text exactly like the screenshot */}
       <div className="relative z-20 w-full px-[30px] text-left flex flex-col items-start mt-12 sm:mt-0">
         
-        {/* Elite Competency Label */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="mb-6"
-        >
-          <span 
-            className="font-mono text-[9px] sm:text-[10px] tracking-[0.25em] uppercase px-4 py-2 bg-[#0E0F11]/90 border border-white/5 text-[#B2B9C1]"
-          >
-            PRÉPARATION ATHLÉTIQUE DE TRÈS HAUTE EXIGENCE
-          </span>
-        </motion.div>
-
         {/* Headline matching the exact layout style from the user screenshot */}
         <div className="overflow-hidden py-1 w-full max-w-4xl">
           <motion.h1
