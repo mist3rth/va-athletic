@@ -6,3 +6,7 @@ coverage/
 *.log
 .env*
 !.env.example
+Docs/
+_METHODOLOGY_S2P_KIT_AiStudio/
+.gemini/
+
