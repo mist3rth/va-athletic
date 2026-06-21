@@ -96,7 +96,27 @@ export default function Testimonials() {
 
           {/* Right Column: Premium Interactive Testimonial Card */}
           <div className="lg:col-span-7 w-full">
-            <div className="bg-[#0C0C0D] border border-white/10 rounded-[24px] p-4 sm:p-5 shadow-2xl relative overflow-hidden min-h-[420px] sm:min-h-[380px] flex">
+            <div 
+              onTouchStart={(e) => {
+                const touch = e.touches[0];
+                (e.currentTarget as any).touchStartX = touch.clientX;
+              }}
+              onTouchEnd={(e) => {
+                const touchStartX = (e.currentTarget as any).touchStartX;
+                if (touchStartX === undefined) return;
+                const touchEndX = e.changedTouches[0].clientX;
+                const diff = touchStartX - touchEndX;
+                
+                // Swipe threshold of 50px to trigger
+                if (diff > 50) {
+                  handleNext();
+                } else if (diff < -50) {
+                  handlePrev();
+                }
+                delete (e.currentTarget as any).touchStartX;
+              }}
+              className="bg-[#0C0C0D] border border-white/10 rounded-[24px] p-4 sm:p-5 shadow-2xl relative overflow-hidden min-h-[420px] sm:min-h-[380px] flex select-none"
+            >
               <AnimatePresence mode="wait" onExitComplete={() => setIsAnimating(false)}>
                 <motion.div
                   key={currentIndex}
