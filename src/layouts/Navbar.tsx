@@ -57,8 +57,8 @@ export default function Navbar({ onCandidatureClick }: NavbarProps) {
             className="flex items-center gap-2 group focus-visible:outline-none"
             aria-label="VA-Athletic Coaching Privé"
           >
-            <Zap className="w-5 h-5 text-accent fill-accent shrink-0 animate-pulse" />
-            <span className="font-display tracking-tight text-[18px] sm:text-[20px] font-black italic text-white uppercase select-none">
+            <Zap className="w-4 h-4 sm:w-5 h-5 text-accent fill-accent shrink-0 animate-pulse" />
+            <span className="font-display tracking-tight text-[15px] xs:text-[17px] sm:text-[20px] font-black italic text-white uppercase select-none">
               VA-<span className="text-accent">ATHLETIC</span>
             </span>
           </a>

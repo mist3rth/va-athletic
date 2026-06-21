@@ -16,6 +16,8 @@
   --font-display: "Orbitron", sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
+
+  --breakpoint-xs: 375px;
 }
 
 @layer base {
