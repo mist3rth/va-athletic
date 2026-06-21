@@ -1,0 +1,6 @@
+{
+  "name": "Coaching Privé",
+  "description": "Coaching privé exclusif pour artistes, athlètes de haut niveau, dirigeants et personnalités publiques. Discrétion absolue, performance sur mesure, 8 clients maximum.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

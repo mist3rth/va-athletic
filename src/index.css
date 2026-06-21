@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #070708;
+  --color-surface: #0E0F11;
+  --color-border: #181B1F;
+  --color-text-primary: #D8DCDF;
+  --color-text-muted: #B2B9C1;
+  --color-accent: #CEFE00;
+  --color-accent-dim: #BFE900;
+  --color-accent-light: #DAFF33;
+  --color-slate-gray: #B2B9C1;
+  --color-light-gray: #D8DCDF;
+
+  --font-display: "Orbitron", sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #070708;
+    color: #D8DCDF;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Custom minimal premium scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #070708;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #181B1F;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #CEFE00;
+  }
+
+  /* Focus rings for premium accessibility */
+  :focus-visible {
+    outline: 1px solid var(--color-accent);
+    outline-offset: 4px;
+  }
+}
+
+/* Custom premium transitions & animations support */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-element.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.char-anim {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.char-anim.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image overlay look */
+.image-overlay {
+  background: linear-gradient(
+    to bottom,
+    transparent 30%,
+    rgba(7, 7, 8, 0.95) 100%
+  );
+}
+
+/* Logo SVG stroke drawing simulation for preloader */
+@keyframes drawStroke {
+  0 {
+    stroke-dashoffset: 600;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-svg-logo {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  animation: drawStroke 2s cubic-bezier(0.445, 0.05, 0.55, 0.95) forwards;
+}
